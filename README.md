@@ -1,4 +1,4 @@
-# two_tier_app_deployment
+# Two-Tier App Deployment
 
 ### Copying the Files to the App Machine
 `scp -i "~/.ssh/eng89_devops.pem" -r "C:\Users\Sandstorm3\Desktop\New folder\db\" ubuntu@ec2-34-244-116-191.eu-west-1.compute.amazonaws.com:~/`
