@@ -39,6 +39,23 @@ wget -qO - https://www.mongodb.org/static/pgp/server-3.2.asc | sudo apt-key add 
 echo "deb http://repo.mongodb.org/apt/ubuntu xenial/mongodb-org/3.2 multiverse" | sudo tee /etc/apt/sources.list.d/mongodb-org-3.2.list
 sudo apt-get update
 sudo apt-get install -y mongodb-org=3.2.20 mongodb-org-server=3.2.20 mongodb-org-shell=3.2.20 mongodb-org-mongos=3.2.20 mongodb-org-tools=3.2.20
+```
+Change the mongod.conf located at `/etc/mongod.conf` to this code:
+```
+storage:
+  dbPath: /var/lib/mongodb
+  journal:
+    enabled: true
+systemLog:
+  destination: file
+  logAppend: true
+  path: /var/log/mongodb/mongod.log
+net:
+  port: 27017
+  bindIp: 0.0.0.0
+```
+Then finish off with these commands:
+```
 sudo systemctl enable mongod
 sudo service mongod start
 ```
