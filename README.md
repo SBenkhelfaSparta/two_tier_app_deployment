@@ -33,7 +33,7 @@ Replace or modify the default file at `/etc/nginx/sites-available/default` and r
 - Launch and choose your key pair
 
 ### Connect Database
-To connect the database to our nodeapp using MongoDB, you should run the following commands:
+To connect the database to our nodeapp using MongoDB, you should install MongoDB:
 ```
 wget -qO - https://www.mongodb.org/static/pgp/server-3.2.asc | sudo apt-key add -
 echo "deb http://repo.mongodb.org/apt/ubuntu xenial/mongodb-org/3.2 multiverse" | sudo tee /etc/apt/sources.list.d/mongodb-org-3.2.list
