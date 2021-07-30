@@ -1,5 +1,12 @@
 # Two-Tier App Deployment
 
+### App Machine Security Group
+For inbound rules include these:
+![img](img/app_in.png)
+
+### Connection to MongoDB
+Make sure the environment variable contains this: `DB_HOST=mongodb://{db_public_ip}:27017/posts`
+
 ### Copying the Files to the App Machine
 `scp -i "~/.ssh/eng89_devops.pem" -r "C:\Users\Sandstorm3\Desktop\New folder\db\" ubuntu@ec2-34-244-116-191.eu-west-1.compute.amazonaws.com:~/`
 Use the command `mv` to rename the file if it names it to your windows directory.
